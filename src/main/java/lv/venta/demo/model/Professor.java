@@ -17,8 +17,12 @@ public class Professor {
 	@Setter(value=AccessLevel.NONE)
 	private int idPr;
 	@Column(name= "Name")
+	@Size(min = 3, max = 30)        
+    @Pattern(regexp="[A-Z]{1}[a-z]+", message="Must be first capital letter and others small")
 	private String name;
 	@Column(name= "Surname")
+	@Size(min = 3, max = 30)        
+    @Pattern(regexp="[A-Z]{1}[a-z]+", message="Must be first capital letter and others small")
 	private String surname;
 	@Column(name= "Degree")
 	private ProfDegree degree;
