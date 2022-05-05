@@ -1,4 +1,6 @@
 package lv.venta.demo.model;
+import java.util.Collection;
+
 import javax.persistence.GenerationType;
 
 import lombok.Setter;
@@ -9,7 +11,6 @@ import lombok.Setter;
 @RequiredArgsConstructor
 @Table
 @Entity
-
 public class Professor {
 	@Column(name= "IdPr")
 	@Id
@@ -26,6 +27,22 @@ public class Professor {
 	private String surname;
 	@Column(name= "Degree")
 	private ProfDegree degree;
+	
+	//1.profesoram ir tikai viens kurss
+	//viens-pet-viens
+	//mappedBy uz mainigo no otras klases
+	//@OneToOne(mappedBy="professor")
+	//@ToString.Exclude
+	//private Course course;
+	//2.profesoram ir vairāki kursi
+	//viens pret daudziem
+	/*@OneToOne(mappedBy="professor")
+	private Collection<Course> courses;*/
+	//3.vienam profesoram ir vairāki kursi
+	//daudzi pret daudziem
+	@ManyToMany(mappedBy="professors")
+	private Collection<Course> courses;
+	
 	
 	public ProfesSor(String name, String surname, ProfDegree degree) {
 		this.name = name;
