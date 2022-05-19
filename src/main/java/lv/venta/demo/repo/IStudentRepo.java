@@ -6,4 +6,6 @@ import lv.venta.demo.model.Student;
 
 public interface IStudentRepo extends CrudRepository<Student, Integer> {
 
+    boolean existsByNameAndSurname(String name, String surname);
+
 }

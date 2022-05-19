@@ -24,11 +24,10 @@ public class JavaSem4Application {
 		SpringApplication.run(JavaSem4Application.class, args);
 	}
 	
-	
 	@Bean //visur, kur šī annotācija, tiks izsukts automātiski
 	public CommandLineRunner testdb(IProfessorRepo profRepo,
-			IStudentRepo studRepo, ICourseRepo courRepo,
-			IGradeRepo grRepo)
+		IStudentRepo studRepo, ICourseRepo courRepo,
+		IGradeRepo grRepo)
 	{
 		return new CommandLineRunner() {
 			@Override
