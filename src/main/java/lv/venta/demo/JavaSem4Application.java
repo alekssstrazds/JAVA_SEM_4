@@ -75,9 +75,6 @@ public class JavaSem4Application {
 		        grRepo.save(gr4);
 		        grRepo.save(gr5);
 				
-				//TODO - pāŗējos objektus 
-				
-				
 			}
 		};
 	}

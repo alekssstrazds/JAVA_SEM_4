@@ -1,0 +1,13 @@
+<html xmlns:th="http://www.thymeleaf.org">
+    <body>
+        <p>Informacija par atzieme--</p>
+        <table>
+            <tr th:each="temp : ${package}">
+                <td th:text="${temp.getValue()}"></td>
+                <td th:text="${temp.getStudent().getName()}"></td>
+                <td th:text="${temp.getStudent().getUsername()}"></td>
+                <td th:text="${temp.getCourse().getTitle()}"></td>
+            </tr>
+        </table>
+    </body>
+</html>
